@@ -70,9 +70,16 @@ class VolvoCarSpecs(CarSpecs):
 
 
 class CAR(Platforms):
+  # P3 / EUCD-style (existing)
   VOLVO_V60 = VolvoEUCDPlatformConfig(
     [VolvoCarDocs("Volvo V60")],
     VolvoCarSpecs(mass=1750, wheelbase=2.776),
+  )
+
+  # P1 (V40) – new entry, same Platforms base, but P1-specific config
+  VOLVO_V40 = VolvoP1PlatformConfig(
+    [VolvoCarDocs("Volvo V40")],
+    VolvoCarSpecs(mass=1610, wheelbase=2.647),  # https://github.com/dragonpilot/dragonpilot/commit/773dce507082d931236b64dca8024dce9625446f
   )
 
 
