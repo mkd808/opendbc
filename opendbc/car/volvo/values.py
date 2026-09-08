@@ -55,6 +55,11 @@ class VolvoEUCDPlatformConfig(PlatformConfig):
     Bus.radar: RADAR_ESR,
   })
 
+@dataclass
+class VolvoP1PlatformConfig(PlatformConfig):
+  dbc_dict: DbcDict = field(default_factory=lambda: {
+    Bus.pt: 'volvo_v40_2017_pt',
+  })
 
 @dataclass
 class VolvoCarDocs(CarDocs):
